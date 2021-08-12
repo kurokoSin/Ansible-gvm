@@ -1,0 +1,11 @@
+---
+# パッケージ管理
+- import_tasks: use/packages.yml
+
+# DB設定
+- import_tasks: createdb.yml
+
+# 参考：
+# [Install and Setup GVM 11 on Ubuntu 20.04](https://kifarunix.com/install-and-setup-gvm-11-on-ubuntu-20-04/)
+# [Ubuntu20.04にGVM脆弱性スキャナーをインストールして使用する方法](https://tutorialcrawler.com/ubuntu-debian/ubuntu20-04%E3%81%ABgvm%E8%84%86%E5%BC%B1%E6%80%A7%E3%82%B9%E3%82%AD%E3%83%A3%E3%83%8A%E3%83%BC%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%81%A6%E4%BD%BF%E7%94%A8/)
+# [【Ansible】PostgreSQL構築の自動化 ](https://densan-hoshigumi.com/server/ansible-postgresql-playbook)

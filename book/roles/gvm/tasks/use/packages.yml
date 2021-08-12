@@ -1,0 +1,79 @@
+---
+- name: apt update
+  become: yes
+  apt:
+    update_cache: yes
+    
+- name: base package install
+  become: yes
+  apt:
+    name:
+    - curl
+    - gnupg
+    - sshpass
+    - socat
+    - snmp
+    - smbclient
+    - vim
+    - git
+    - rpm
+    - rsync
+
+- name: lib package install
+  become: yes
+  apt:
+    name:
+    - libglib2.0-dev
+    - libgpgme-dev
+    - libgnutls28-dev
+    - libssh-gcrypt-dev
+    - libldap2-dev
+    - libradcli-dev
+    - libhiredis-dev
+    - libpcap-dev
+    - libksba-dev
+    - libsnmp-dev
+    - libpopt-dev
+    - libmicrohttpd-dev
+    - libxml2-dev
+    - libical-dev
+
+- name: package install
+  become: yes
+  apt:
+    name:
+    - software-properties-common
+    - build-essential
+    - cmake
+    - uuid-dev
+    - pkg-config
+    - doxygen
+    - graphviz
+    - bison
+    - gcc-mingw-w64
+    - heimdal-dev
+    - xmltoman
+    - xsltproc
+    - gnutls-bin
+    - nmap
+    - nsis
+    - wget
+    - fakeroot
+    - gettext
+    - xml-twig-tools
+    - virtualenv
+    - texlive-latex-extra
+    - texlive-fonts-recommended
+
+- name: python package install
+  become: yes
+  apt:
+    name:
+    - python3-polib
+    - python3-paramiko
+    - python3-lxml
+    - python3-defusedxml
+    - python3-pip
+    - python3-psutil
+    - python-impacket
+  

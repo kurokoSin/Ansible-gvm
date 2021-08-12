@@ -1,0 +1,12 @@
+---
+# パッケージ管理
+- import_tasks: use/packages.yml
+
+# DBクラスタ作成
+- import_tasks: use/db_cluster.yml
+
+# 設定ファイル管理
+- import_tasks: use/configurations.yml
+
+# サービス起動状態管理
+- import_tasks: use/services.yml

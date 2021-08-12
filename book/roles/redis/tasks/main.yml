@@ -1,0 +1,22 @@
+- name: redis package install
+  become: yes
+  shell: apt -y install redis-server || true
+  # サービスが起動しなくてエラーになるので無理やり入れてる
+
+- name: edit config
+  become: yes
+  block:
+  - lineinfile:
+      path:   "/etc/redis/redis.conf"
+      regexp: "^supervised no"
+      line:   "supervised systemd"
+  - lineinfile:
+      path:   "/etc/redis/redis.conf"
+      regexp: "^bind 127.0.0.1 ::1"
+      line:   "bind 127.0.0.1"
+
+- name: restart
+  become: yes
+  systemd:
+    name: redis-server
+    state: restarted

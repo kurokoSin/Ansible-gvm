@@ -1,0 +1,19 @@
+# Yarn JavaScript package manager
+- name: install
+  become: yes
+  block:
+  - apt_key:
+      url: https://dl.yarnpkg.com/debian/pubkey.gpg
+      state: present
+  - lineinfile:
+      path: "/etc/apt/sources.list.d/yarn.list"
+      line: "deb https://dl.yarnpkg.com/debian/ stable main"
+  - apt:
+      update_cache: yes
+      name: yarn
+
+# - name: yarn update
+#   block:
+#   - command: yarn install
+#   - command: yarn update
+    

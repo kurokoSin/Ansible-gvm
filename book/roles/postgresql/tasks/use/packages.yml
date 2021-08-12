@@ -1,0 +1,5 @@
+---
+- name: "インストールパッケージ"
+  apt:
+    name: "{{ postgresql_packages }}"
+    state: present
