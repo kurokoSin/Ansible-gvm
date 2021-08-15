@@ -1,9 +1,11 @@
 ---
 # パッケージ管理
-- import_tasks: use/packages.yml
+- import_tasks: packages.yml
 
+# ユーザ作成
+- import_tasks: create_user.yml
 # DB設定
-- import_tasks: createdb.yml
+- import_tasks: create_db.yml
 
 # 参考：
 # [Install and Setup GVM 11 on Ubuntu 20.04](https://kifarunix.com/install-and-setup-gvm-11-on-ubuntu-20-04/)

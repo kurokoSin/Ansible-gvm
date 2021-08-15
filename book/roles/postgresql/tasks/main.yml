@@ -1,12 +1,15 @@
 ---
+- name: postgresql_version
+  debug: var=postgresql_version
+
 # パッケージ管理
-- import_tasks: use/packages.yml
+- import_tasks: packages.yml
 
-# DBクラスタ作成
-- import_tasks: use/db_cluster.yml
+# # DBクラスタ作成
+# - import_tasks: db_cluster.yml
 
-# 設定ファイル管理
-- import_tasks: use/configurations.yml
+# # 設定ファイル管理
+# - import_tasks: configurations.yml
 
 # サービス起動状態管理
-- import_tasks: use/services.yml
+- import_tasks: service.yml

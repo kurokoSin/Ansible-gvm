@@ -1,6 +1,6 @@
 ---
 - name: "DBクラスタの初期化"
-  shell: "/bin/postgresql-setup initdb"
+  shell: "/usr/lib/postgresql/{{ postgresql_version }}/bin/initdb"
   environment:
     PGSETUP_INITDB_OPTIONS: "-D {{ postgresql_datadir }} --encoding=UTF-8 --no-locale"
   args:

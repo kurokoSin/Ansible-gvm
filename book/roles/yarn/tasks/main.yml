@@ -7,6 +7,7 @@
       state: present
   - lineinfile:
       path: "/etc/apt/sources.list.d/yarn.list"
+      create: yes
       line: "deb https://dl.yarnpkg.com/debian/ stable main"
   - apt:
       update_cache: yes

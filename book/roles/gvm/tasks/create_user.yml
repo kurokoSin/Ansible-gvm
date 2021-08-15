@@ -1,0 +1,21 @@
+- name: create project location
+  become: yes
+  file: 
+    path: "{{ item.path }}"
+    state: directory 
+    owner: "gvm"
+    group: "gvm"
+    mode:  "{{ item.mode }}"
+  with_items:
+    - { path: /opt/gvm, mode: "0755" }
+
+- name: Create Group GVM
+  group:
+    name: "gvm"
+
+- name: Create User Shell User
+  user:
+    name: "gvm"
+    group: "gvm"
+    groups: "redis"
+
